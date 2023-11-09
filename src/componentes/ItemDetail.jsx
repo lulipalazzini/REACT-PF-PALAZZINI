@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 import "./paginas/Paginas.css";
+import Contador from "./ItemQuantitySelector";
+import { useContext, useState } from "react";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail = ({ item }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const restarProd = () => {
+    quantity > 1 && setQuantity(quantity - 1);
+  };
+
+  const sumarProd = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const { carritoCompras, agregarProd } = useContext(CartContext);
+  console.log(carritoCompras);
+
   return (
     <div>
       <div className="contenedorBack">
@@ -16,7 +32,14 @@ const ItemDetail = ({ item }) => {
           <p className="lineasDetalles">{item.precio}</p>
           <p className="lineasDetalles">Descripcion: {item.descripcion}</p>
           <p className="lineasDetalles">Categoria: {item.categoria}</p>
-          <button className="lineasDetalles">Comprar</button>
+          <Contador
+            quantity={quantity}
+            sumarProd={sumarProd}
+            restarProd={restarProd}
+            agregarProd={() => {
+              agregarProd(item, quantity);
+            }}
+          ></Contador>
         </div>
       </div>
     </div>

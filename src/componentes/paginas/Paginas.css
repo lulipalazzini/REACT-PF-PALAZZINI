@@ -89,7 +89,13 @@ h2 {
   margin-bottom: 1em;
 }
 
-.productoDetalles button {
+.quantitySelector {
+  display: flex;
+  align-items: baseline;
+  margin-left: -4em;
+}
+
+.btnCompra {
   background-color: #3f3d56;
   margin: 0.7em auto;
   padding: 0.8em;
@@ -102,7 +108,24 @@ h2 {
   font-weight: bold;
 }
 
-.productoDetalles button:hover {
+.btnCompra:hover {
+  background-color: #e4e4e4;
+  color: #3f3d56;
+}
+
+.quantityBtn {
+  background-color: #3f3d56;
+  margin: 0.7em auto;
+  padding: 0.5em;
+  border: 2px solid #3f3d56;
+  border-radius: 2em;
+  color: #e4e4e4;
+  text-decoration: none;
+  width: 4em;
+  font-weight: bold;
+}
+
+.quantityBtn:hover {
   background-color: #e4e4e4;
   color: #3f3d56;
 }
