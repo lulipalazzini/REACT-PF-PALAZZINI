@@ -9,7 +9,6 @@ const Carrito = () => {
   return (
     <div>
       <h1>Carrito de Compras</h1>
-      <Checkout></Checkout>
       {carritoCompras.map((prod) => (
         <div key={prod.id}>
           <h2>{prod.producto}</h2>
@@ -27,6 +26,7 @@ const Carrito = () => {
         <h2>Tu carrito esta vacio</h2>
         /* Fijate si agregas una fotito como de una estrella triste */
       )}
+      <Checkout></Checkout>
     </div>
   );
 };
