@@ -4,30 +4,12 @@ import ItemListContainer from "./componentes/ItemListContainer";
 import Inicio from "./componentes/paginas/Inicio";
 import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import Carrito from "./componentes/paginas/Carrito";
-import { useState } from "react";
-import { CartContext } from "./context/CartContext";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
-  const [carritoCompras, setCarritoCompras] = useState();
-
-  const agregarProd = ({ item, quantity }) => {
-    const itemAgregado = { ...item, quantity };
-    const nuevoCarrito = [...carritoCompras];
-    const estaEnCarrito = nuevoCarrito.find(
-      (producto) => producto.id === itemAgregado.id
-    );
-
-    if (estaEnCarrito) {
-      estaEnCarrito.cantidad += quantity;
-    } else {
-      nuevoCarrito.push(itemAgregado);
-    }
-    setCarritoCompras(nuevoCarrito);
-  };
-
   return (
-    <>
-      <CartContext.Provider value={(carritoCompras, agregarProd)}>
+    <div>
+      <CartProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -45,8 +27,8 @@ function App() {
           </Routes>
           {/* ARMAR UN FOOTER */}
         </BrowserRouter>
-      </CartContext.Provider>
-    </>
+      </CartProvider>
+    </div>
   );
 }
 

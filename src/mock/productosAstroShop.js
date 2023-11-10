@@ -2,7 +2,7 @@ export const productosAstroShop = [
   {
     id: 1,
     producto: "Velas",
-    precio: "$20.5",
+    precio: 20.5,
     img: "/imagenes/productos/velas.png",
     descripcion: "Velitas para todos los hechizos que necesites",
     categoria: "magia",
@@ -10,7 +10,7 @@ export const productosAstroShop = [
   {
     id: 2,
     producto: "Sahumerios",
-    precio: "$100.5",
+    precio: 100.5,
     img: "/imagenes/productos/sahumerios.png",
     descripcion: "Sahumerios con olores deliciosos",
     categoria: "magia",
@@ -18,7 +18,7 @@ export const productosAstroShop = [
   {
     id: 3,
     producto: "Bombas de Defumacion",
-    precio: "$89.76",
+    precio: 89.76,
     img: "/imagenes/productos/bombasDefu.png",
     descripcion: "Bombitas de humo para limpiar las energias de tu hogar",
     categoria: "magia",
@@ -26,7 +26,7 @@ export const productosAstroShop = [
   {
     id: 4,
     producto: "Tarot",
-    precio: "$150.5",
+    precio: 150.5,
     img: "/imagenes/productos/tarot.png",
     descripcion: "Tarot para conocer tu hermoso futuro",
     categoria: "adivinacion",
@@ -34,7 +34,7 @@ export const productosAstroShop = [
   {
     id: 5,
     producto: "Pendulo",
-    precio: "$1000.5",
+    precio: 1000.5,
     img: "/imagenes/productos/pendulo.png",
     descripcion: "Pendulo para responder tus dudas",
     categoria: "adivinacion",
@@ -42,7 +42,7 @@ export const productosAstroShop = [
   {
     id: 6,
     producto: "Sahumo",
-    precio: "$89.76",
+    precio: 89.76,
     img: "/imagenes/productos/sahumo.png",
     descripcion: "Sahumitos de hierbas caseros para quitar malas vibras",
     categoria: "magia",

@@ -26,10 +26,9 @@ const NavBar = () => {
           <NavLink to="/productos/adivinacion">Adivinacion</NavLink>
         </li>
         <li>
-          <NavLink to="/carrito">Carrito</NavLink>
-        </li>
-        <li>
-          <CartWidget />
+          <NavLink to="/carrito">
+            <CartWidget />
+          </NavLink>
         </li>
       </ul>
     </nav>

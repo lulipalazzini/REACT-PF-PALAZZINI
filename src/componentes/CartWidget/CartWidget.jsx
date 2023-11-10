@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import "./CartWidget.css";
+import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
+  const { cantidadEnCarrito } = useContext(CartContext);
+
   return (
     <span>
       <img
@@ -8,7 +12,7 @@ const CartWidget = () => {
         alt="Carrito de compras"
         className="carrin"
       />
-      <span>0</span>
+      <span>{cantidadEnCarrito()}</span>
     </span>
   );
 };
