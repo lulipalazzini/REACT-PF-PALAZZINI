@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
-import { listaProductos } from "../servicios/pedirDatos";
 import Productos from "./paginas/Productos";
 import { useParams } from "react-router-dom";
 import "./paginas/Paginas.css";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { database } from "../firebase/data";
 
 const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
   const categoria = useParams().categoria;
 
   useEffect(() => {
-    listaProductos().then((res) => {
-      if (categoria) {
-        setProductos(res.filter((prod) => prod.categoria === categoria));
-      } else {
-        setProductos(res);
-      }
+    const referenciaProd = collection(database, "productosAstroShop");
+    const q = categoria
+      ? query(referenciaProd, where("categoria", "==", `${categoria}`))
+      : referenciaProd;
+    getDocs(q).then((res) => {
+      setProductos(
+        res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        })
+      );
     });
   }, [categoria]);
 

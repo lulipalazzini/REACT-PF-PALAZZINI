@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
-const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
+const carritoInicial = JSON.parse(localStorage.getItem("carritoCompras")) || [];
 
 export const CartProvider = ({ children }) => {
   const [carritoCompras, setCarritoCompras] = useState(carritoInicial);
@@ -16,11 +16,10 @@ export const CartProvider = ({ children }) => {
 
     if (estaEnCarrito) {
       estaEnCarrito.quantity += quantity;
-      setCarritoCompras(nuevoCarrito);
     } else {
       nuevoCarrito.push(itemAgregado);
-      setCarritoCompras(nuevoCarrito);
     }
+    setCarritoCompras(nuevoCarrito);
   };
 
   const cantidadEnCarrito = () => {
