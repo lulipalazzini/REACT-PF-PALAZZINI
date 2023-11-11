@@ -31,9 +31,13 @@ const Checkout = () => {
     return (
       <div>
         <h1>Muchas gracias por tu compra</h1>
-        <p>Tu número de pedido es: {pedidoId}</p>
-        <button>
-          <Link to="/">Volver a AstroShop</Link>
+        <p className="numPedido">
+          Tu número de pedido es: <strong>{pedidoId}</strong>
+        </p>
+        <button className="comprafinalbtn">
+          <Link to="/" className="comprafinallink">
+            Volver a AstroShop
+          </Link>
         </button>
       </div>
     );
@@ -42,28 +46,32 @@ const Checkout = () => {
   return (
     <>
       <h1>Checkout</h1>
-      <div>
-        <form onSubmit={handleSubmit(comprar)}>
-          <span>
-            <input
-              type="text"
-              placeholder="Ingrese su nombre"
-              {...register("nombre")}
-            />
-            <input
-              type="text"
-              placeholder="Ingrese su apellido"
-              {...register("apellido")}
-            />
-          </span>
-          <input
-            type="email"
-            placeholder="Ingrese su email"
-            {...register("email")}
-          />
-          <button type="submit">Comprar</button>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit(comprar)} className="checkoutFormu">
+        <p>Nombre</p>
+        <input
+          type="text"
+          placeholder="Ingrese su nombre"
+          {...register("nombre")}
+          className="checkoutInput"
+        />
+        <p>Apellido</p>
+        <input
+          type="text"
+          placeholder="Ingrese su apellido"
+          {...register("apellido")}
+          className="checkoutInput"
+        />
+        <p>E-mail</p>
+        <input
+          type="email"
+          placeholder="Ingrese su email"
+          {...register("email")}
+          className="checkoutInput"
+        />
+        <button type="submit" className="eraseBtn">
+          Comprar
+        </button>
+      </form>
     </>
   );
 };

@@ -10,7 +10,7 @@ const Carrito = () => {
     <div>
       <h1>Carrito de Compras</h1>
       {carritoCompras.map((prod) => (
-        <div key={prod.id}>
+        <div key={prod.id} className="carritoEstilo">
           <h3>{prod.producto}</h3>
           <p>Precio unitario: ${prod.precio}</p>
           <p>Precio total: ${prod.precio * prod.quantity}</p>
@@ -18,17 +18,27 @@ const Carrito = () => {
         </div>
       ))}
       {carritoCompras.length > 0 ? (
-        <span>
-          <h2>Precio total: ${precioTotal().toFixed(2)}</h2>
-          <button onClick={borrarCarrito}>Borrar</button>
-        </span>
+        <>
+          <span className="preciobtn">
+            <h3>Precio total: ${precioTotal().toFixed(2)}</h3>
+            <button onClick={borrarCarrito} className="eraseBtn">
+              Borrar
+            </button>
+          </span>
+          <button className="comprafinalbtn">
+            <Link to="/checkout" className="comprafinallink">
+              Finalizar Compra
+            </Link>
+          </button>
+        </>
       ) : (
-        <h2>Tu carrito esta vacio</h2>
-        /* Fijate si agregas una fotito como de una estrella triste */
+        <>
+          <h2>Tu carrito esta vacio :( </h2>
+          <div className="astroLlora">
+            <img src="/imagenes/carritoVacio.png" alt="Estrella llorando" />
+          </div>
+        </>
       )}
-      <button>
-        <Link to="/checkout">Finalizar Compra</Link>
-      </button>
     </div>
   );
 };

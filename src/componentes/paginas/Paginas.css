@@ -129,3 +129,81 @@ h2 {
   background-color: #e4e4e4;
   color: #3f3d56;
 }
+
+.preciobtn {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+.comprafinalbtn {
+  background-color: #3f3d56;
+  margin: 0.7em auto;
+  padding: 0.5em;
+  border: 2px solid #3f3d56;
+  border-radius: 2em;
+  width: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comprafinallink {
+  text-decoration: none;
+  color: #e4e4e4;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.carritoEstilo {
+  margin: 2em;
+}
+
+.eraseBtn {
+  background-color: #3f3d56;
+  border: 2px solid #3f3d56;
+  border-radius: 2em;
+  color: #e4e4e4;
+  text-decoration: none;
+  width: 7em;
+  height: 2.5em;
+  font-weight: bold;
+}
+
+.eraseBtn:hover {
+  background-color: #e4e4e4;
+  color: #3f3d56;
+}
+
+.checkoutFormu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.checkoutInput {
+  width: 18em;
+  height: 2.5em;
+  margin: 0.8em;
+  padding: 0.5em;
+}
+
+.numPedido {
+  text-align: center;
+  margin: 2em auto;
+  font-size: 1.2em;
+}
+
+.astroLlora {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.astroLlora img {
+  height: 50vh;
+  object-fit: cover;
+}
