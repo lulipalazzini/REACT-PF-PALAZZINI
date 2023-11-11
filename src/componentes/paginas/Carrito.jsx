@@ -11,16 +11,16 @@ const Carrito = () => {
       <h1>Carrito de Compras</h1>
       {carritoCompras.map((prod) => (
         <div key={prod.id}>
-          <h2>{prod.producto}</h2>
+          <h3>{prod.producto}</h3>
           <p>Precio unitario: ${prod.precio}</p>
           <p>Precio total: ${prod.precio * prod.quantity}</p>
           <p>Cantidad: {prod.quantity}</p>
         </div>
       ))}
-      {carritoCompras > 0 ? (
+      {carritoCompras.length > 0 ? (
         <>
-          <h2>Precio total: ${precioTotal()}</h2>
-          <button onClick={borrarCarrito()}>Borrar</button>
+          <h2>Precio total: ${precioTotal}</h2>
+          <button onClick={borrarCarrito}>Borrar</button>
         </>
       ) : (
         <h2>Tu carrito esta vacio</h2>

@@ -5,17 +5,19 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 
 const ItemDetail = ({ item }) => {
+  const { carritoCompras, agregarProd } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
 
   const restarProd = () => {
     quantity > 1 && setQuantity(quantity - 1);
+    console.log(quantity);
   };
 
   const sumarProd = () => {
     setQuantity(quantity + 1);
+    console.log(quantity);
   };
 
-  const { carritoCompras, agregarProd } = useContext(CartContext);
   console.log(carritoCompras);
 
   return (
