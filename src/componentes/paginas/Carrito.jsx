@@ -19,7 +19,7 @@ const Carrito = () => {
       ))}
       {carritoCompras.length > 0 ? (
         <span>
-          <h2>Precio total: ${precioTotal()}</h2>
+          <h2>Precio total: ${precioTotal().toFixed(2)}</h2>
           <button onClick={borrarCarrito}>Borrar</button>
         </span>
       ) : (
